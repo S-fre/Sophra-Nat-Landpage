@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿# Sophra'Nat - Site vitrine
-=======
 # Sophra'Nat - Site vitrine
->>>>>>> a5556c6b14c35c90d6d46ccfdb28354241705f4d
 
 ## Visualiser le site
 
