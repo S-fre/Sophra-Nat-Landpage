@@ -4,7 +4,7 @@
 
 Le site est accessible directement ici :
 
-https://s-fre.github.io/Sophra-Nat-Landpage/
+https://s-fre.github.io/Sophra-Nat-Landpage
 
 Il suffit de cliquer sur le lien pour ouvrir le site dans un navigateur. Aucun logiciel n'est nécessaire.
 
