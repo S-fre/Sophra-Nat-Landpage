@@ -38,7 +38,7 @@
 
     <main>
         <section class="hero" id="accueil">
-            <video class="hero-video" autoplay muted loop playsinline>
+            <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
                 <source src="ressources/videos/hero-video.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
@@ -209,9 +209,19 @@
                         </div>
                     </div>
                 </article>
-            </div>
-            <div class="services-cta">
-                <a class="primary-btn" href="https://www.resalib.fr/praticien/125279-catherine-allart-naturopathe-bonneville" target="_blank" rel="noopener">Prendre rendez-vous</a>
+                <article class="service-card service-booking-card reveal">
+                    <a class="booking-icon-link" href="https://www.resalib.fr/praticien/125279-catherine-allart-naturopathe-bonneville" target="_blank" rel="noopener" aria-label="Réserver un rendez-vous" title="Réserver un rendez-vous">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3.5" y="5" width="17" height="16" rx="2"></rect>
+                            <path d="M8 3.5v3M16 3.5v3M3.5 10h17M12 13v5m-2.5-2.5h5"></path>
+                        </svg>
+                    </a>
+                    <div class="service-body">
+                        <span class="service-index">08</span>
+                        <h3>On en parle ensemble&nbsp;?</h3>
+                        <p>Réservez un rendez-vous avec Catherine pour faire le point et choisir l’accompagnement qui vous correspond.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
@@ -237,7 +247,7 @@
         <section class="section split-section" id="apropos">
             <div class="split-image reveal">
                 <div class="split-image-frame">
-                    <img src="ressources/images/allart.jpg" alt="Catherine Allart">
+                    <img src="ressources/images/allart massage.png" alt="Catherine Allart réalisant un massage bien-être">
                 </div>
                 <p class="split-signature">
                     <span>Catherine Allart</span>
