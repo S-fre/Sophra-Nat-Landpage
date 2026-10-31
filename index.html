@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="page-loader" id="pageLoader" role="status" aria-label="Chargement du site">
+        <img src="ressources/logo/logo catherine white.png" alt="Sophra'Nat - Catherine Allart">
+    </div>
     <header class="site-header" id="siteHeader">
         <a class="brand" href="#accueil" aria-label="Sophra'Nat - Accueil">
             <img src="ressources/logo/logo catherine white.png" alt="Sophra'Nat Catherine Allart">
@@ -23,7 +26,10 @@
         </nav>
         <div class="header-actions">
             <button class="audio-btn" id="audioBtn" type="button" aria-label="Lire la musique" aria-pressed="false">
-                <span></span>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M4 10v4h4l5 4V6l-5 4H4Z"></path>
+                    <path d="M16 9a5 5 0 0 1 0 6M18.5 6.5a8.5 8.5 0 0 1 0 11"></path>
+                </svg>
             </button>
             <a class="phone-link" href="tel:+33609236608">06 09 23 66 08</a>
             <a class="booking-link" href="https://www.resalib.fr/praticien/125279-catherine-allart-naturopathe-bonneville" target="_blank" rel="noopener">Rendez-vous</a>
@@ -197,16 +203,39 @@
                         </div>
                     </div>
                 </article>
+                <article class="service-card reveal">
+                    <img src="ressources/images/pressothérapie.jpg" alt="">
+                    <div class="service-body">
+                        <span class="service-index">07</span>
+                        <h3>Pressothérapie</h3>
+                        <p class="accroche">Séance de 30 min de drainage mécanique pour aider à réduire la sensation de jambes lourdes et les gonflements, et favoriser une sensation de légèreté.</p>
+                        <p class="description-07">Pendant la séance, des bottes équipées de compartiments gonflables exercent des pressions douces et progressives sur les jambes. Ce massage mécanique accompagne le retour veineux et le drainage lymphatique. Installé(e) confortablement, vous profitez d’un temps de détente de 30 minutes, particulièrement apprécié lorsque les jambes sont fatiguées ou après une journée passée debout. La pression est adaptée à votre confort.</p>
+                        <div class="links-service-card">
+                            <a href="https://www.resalib.fr/praticien/125279-catherine-allart-naturopathe-bonneville" target="_blank" rel="noopener">Prendre rendez-vous</a>
+                            <a href="#description-07" class="about-service">En savoir +</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
         <section class="omnes-card reveal">
-            <div>
-                <span class="eyebrow">Membre certifié</span>
-                <h2>OMNES</h2>
-                <p>Organisation de la Médecine Naturelle et de l'Éducation Sanitaire.</p>
+            <div class="omnes-heading">
+                <span class="eyebrow">Engagements professionnels</span>
+                <h2>Des repères de qualité</h2>
             </div>
-            <a href="https://www.omnes.fr/" target="_blank" rel="noopener">Découvrir</a>
+            <ul class="affiliations-grid">
+                <li>
+                    <h3>OMNES</h3>
+                    <p>Organisation de la Médecine Naturelle et de l'Éducation Sanitaire.</p>
+                    <a href="https://www.omnes.fr/" target="_blank" rel="noopener">Découvrir OMNES <span aria-hidden="true">→</span></a>
+                </li>
+                <li>
+                    <h3>FÉNA</h3>
+                    <p>Fédération Française des Écoles de Naturopathie.</p>
+                    <a href="https://lafena.fr/" target="_blank" rel="noopener">Découvrir la FÉNA <span aria-hidden="true">→</span></a>
+                </li>
+            </ul>
         </section>
 
         <section class="section split-section" id="apropos">
@@ -297,7 +326,9 @@
                 <a href="#services">Services</a>
                 <a href="#apropos">À propos</a>
                 <a href="#avis">Avis Google</a>
-                <a href="https://www.omnes.fr/" target="_blank" rel="noopener">OMNES</a>
+                <h3 class="footer-subtitle">Affiliations professionnelles</h3>
+                <p class="footer-affiliation"><strong>OMNES</strong><br>Organisation de la Médecine Naturelle et de l'Éducation Sanitaire.<br><a href="https://www.omnes.fr/" target="_blank" rel="noopener">Découvrir OMNES</a></p>
+                <p class="footer-affiliation"><strong>FÉNA</strong><br>Fédération Française des Écoles de Naturopathie.<br><a href="https://lafena.fr/" target="_blank" rel="noopener">Découvrir la FÉNA</a></p>
             </div>
             <div>
                 <h3>Suivez-moi</h3>

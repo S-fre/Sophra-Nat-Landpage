@@ -1,6 +1,49 @@
 const header = document.getElementById('siteHeader');
 const audio = document.getElementById('ambientAudio');
 const audioBtn = document.getElementById('audioBtn');
+const pageLoader = document.getElementById('pageLoader');
+
+if (pageLoader) {
+    const finishPageLoader = () => {
+        pageLoader.classList.add('is-hidden');
+        pageLoader.addEventListener('transitionend', () => pageLoader.remove(), { once: true });
+        window.setTimeout(() => pageLoader.remove(), 650);
+    };
+
+    const startLogoFlight = async () => {
+        const loaderLogo = pageLoader.querySelector('img');
+        const headerLogo = document.querySelector('.brand img');
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        await new Promise(resolve => window.setTimeout(resolve, 1250));
+
+        if (!loaderLogo || !headerLogo || prefersReducedMotion || !loaderLogo.animate) {
+            finishPageLoader();
+            return;
+        }
+
+        const start = loaderLogo.getBoundingClientRect();
+        const target = headerLogo.getBoundingClientRect();
+        const scale = target.width / start.width;
+        const translateX = target.left - start.left;
+        const translateY = target.top - start.top;
+
+        const flight = loaderLogo.animate([
+            { transform: 'translateY(0) scale(1)', opacity: 1 },
+            { transform: `translate(${translateX}px, ${translateY}px) scale(${scale})`, opacity: 0.96 }
+        ], {
+            duration: 1250,
+            easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
+            fill: 'forwards'
+        });
+
+        await flight.finished.catch(() => {});
+        finishPageLoader();
+    };
+
+    if (document.readyState === 'complete') startLogoFlight();
+    else window.addEventListener('load', startLogoFlight, { once: true });
+}
 
 function setHeaderState() {
     header?.classList.toggle('is-scrolled', window.scrollY > 16);
@@ -14,6 +57,7 @@ if (audio && audioBtn) {
 
     const setAudioState = (playing) => {
         audioBtn.classList.toggle('is-playing', playing);
+        audioBtn.classList.toggle('is-muted', !playing);
         audioBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
         audioBtn.setAttribute('aria-label', playing ? 'Mettre la musique en pause' : 'Lire la musique');
     };
